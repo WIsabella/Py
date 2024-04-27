@@ -1,7 +1,7 @@
 
 from __future__ import print_function
 import keras
-from keras.datasets import mnist
+from keras import mnist
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import numpy as np

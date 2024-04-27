@@ -1,11 +1,11 @@
 from __future__ import print_function
 #导入keras库
 import keras
-from keras.datasets import mnist
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Flatten
-from keras.layers import Conv2D, MaxPooling2D
-from keras import backend as K
+from keras import mnist
+from keras import Sequential
+from keras import Dense, Dropout, Flatten
+from keras import Conv2D, MaxPooling2D
+from keras.api import backend as K
 
 #设置一些参数
 batch_size = 128
