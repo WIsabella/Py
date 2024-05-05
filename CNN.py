@@ -1,11 +1,11 @@
 from __future__ import print_function
 #导入keras库
 import keras
-from keras import mnist
-from keras import Sequential
-from keras import Dense, Dropout, Flatten
-from keras import Conv2D, MaxPooling2D
-from keras.api import backend as K
+from keras.datasets import mnist
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, Flatten
+from keras.layers import Conv2D, MaxPooling2D
+from keras import backend as K
 
 #设置一些参数
 batch_size = 128
@@ -94,11 +94,13 @@ image_sample = one_sample.reshape(28,28)
 print (image_sample.shape)
 import matplotlib.pyplot as plt
 plt.figure(1, figsize=(3, 3))
-plt.imshow(image_sample, cmap=plt.cm.gray_r, interpolation='nearest')
+plt.imshow(image_sample, cmap="gray_r", interpolation='nearest')
 plt.show()
 
 #显示预测结果
-predicted = model.predict(one_sample)
-predicted_class = model.predict_classes(one_sample, verbose=0)
-print (predicted)
-print (predicted_class)
+# Predict
+predicted_probabilities = model.predict(one_sample)
+predicted_class = predicted_probabilities.argmax(axis=-1)
+
+print(predicted_probabilities)
+print(predicted_class)

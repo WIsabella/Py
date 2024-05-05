@@ -1,11 +1,10 @@
 
 from __future__ import print_function
 import keras
-from tensorflow.keras.datasets import mnist
-from keras import Sequential
-from tensorflow.keras.layers import Dense
-from tensorflow.keras.layers import Dropout
-from tensorflow.keras.optimizers import RMSprop
+from keras.datasets import mnist
+from keras.models import Sequential
+from keras.layers import Dense, Dropout
+from keras.optimizers import RMSprop
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import numpy as np
@@ -28,18 +27,18 @@ x_test = x_test.astype('float32')
 #把像素灰度转换成[0,1]之间的浮点数
 x_train /= 255
 x_test /= 255
-#print(x_train.shape[0], 'train samples')# 60000 train samples
-#print(x_test.shape[0], 'test samples')# 10000 test samples
+print(x_train.shape[0], 'train samples')# 60000 train samples
+print(x_test.shape[0], 'test samples')# 10000 test samples
 
 # convert class vectors to binary class matrices
-#print (y_train )
-#print (y_test )
+print (y_train )
+print (y_test )
 
 # #转one-hot标签
 y_train = keras.utils.to_categorical(y_train, num_classes)
 y_test = keras.utils.to_categorical(y_test, num_classes)
-#print (y_train )
-#print (y_test )
+print (y_train )
+print (y_test )
 
 #建立机器学习模型（添加层）
 model = Sequential()#建立顺序模型,即前向反馈神经网络
