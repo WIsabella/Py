@@ -35,3 +35,5 @@ print(name*100)
 
 str=input()
 print(str[0:10])
+
+print("test")
